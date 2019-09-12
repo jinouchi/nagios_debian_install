@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # install the following LAMP stack components in your system
-apt install apache2 libapache2-mod-php7.0 php7.0
+apt install apache2 libapache2-mod-php7.0 php7.0 -y
 
 # install the following system dependencies and utilities required to compile and install Nagios Core from sources
-apt install wget unzip zip  autoconf gcc libc6 make apache2-utils libgd-dev
+apt install wget unzip zip  autoconf gcc libc6 make apache2-utils libgd-dev -y
 
 # create nagios system user and group and add nagios account to the Apache www-data user
 useradd nagios
@@ -49,7 +49,7 @@ systemctl enable nagios
 
 # compile and install Nagios Plugins from sources
 # prereqs
-apt install libmcrypt-dev make libssl-dev bc gawk dc build-essential snmp libnet-snmp-perl gettext libldap2-dev smbclient fping libmysqlclient-dev qmail-tools libpqxx3-dev libdbi-dev 
+apt install libmcrypt-dev make libssl-dev bc gawk dc build-essential snmp libnet-snmp-perl gettext libldap2-dev smbclient fping libmysqlclient-dev qmail-tools libpqxx3-dev libdbi-dev -y
 wget https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz 
 tar xfz release-2.2.1.tar.gz 
 cd nagios-plugins-release-2.2.1/
